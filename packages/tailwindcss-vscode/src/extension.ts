@@ -65,7 +65,7 @@ export function activate(context: ExtensionContext) {
     path.join('dist', 'src', 'server', 'index.js')
   )
   let outputChannel: OutputChannel = Window.createOutputChannel(
-    'lsp-multi-server-example'
+    'vscode-tailwindcss'
   )
 
   function didOpenTextDocument(document: TextDocument): void {
@@ -90,12 +90,12 @@ export function activate(context: ExtensionContext) {
           scheme: 'untitled',
           language,
         })),
-        diagnosticCollectionName: 'lsp-multi-server-example',
+        diagnosticCollectionName: 'vscode-tailwindcss',
         outputChannel: outputChannel,
       }
       defaultClient = new LanguageClient(
-        'lsp-multi-server-example',
-        'LSP Multi Server Example',
+        'vscode-tailwindcss',
+        'VSCode Tailwind CSS',
         serverOptions,
         clientOptions
       )
@@ -125,14 +125,14 @@ export function activate(context: ExtensionContext) {
           language,
           pattern: `${folder.uri.fsPath}/**/*`,
         })),
-        diagnosticCollectionName: 'lsp-multi-server-example',
+        diagnosticCollectionName: 'vscode-tailwindcss',
         workspaceFolder: folder,
         outputChannel: outputChannel,
         middleware: {},
       }
       let client = new LanguageClient(
-        'lsp-multi-server-example',
-        'LSP Multi Server Example',
+        'vscode-tailwindcss',
+        'VSCode Tailwind CSS',
         serverOptions,
         clientOptions
       )
